@@ -8,13 +8,10 @@ namespace OmanVehicleServiceBookingSystem
 {
     internal class Booking
     {
-        public string Service { get; set; }
-        public string Appointment { get; set; }
-
-        public Booking(string service, string appointment)
         {
-            Service = service;
-            Appointment = appointment;
         }
+
+        public string service { get; set; }
+        public string appointement { get; set; }
     }
 }
