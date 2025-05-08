@@ -11,7 +11,7 @@ namespace OmanVehicleServiceBookingSystem
         public string Id { get; set; }
         public string Username { get; set; }
         public int Phonenumber { get; set; }
-        private int IdCounter = 000;
+        private int IdCounter = 001;
 
 
         public Customer( string username, int phonenumber)
@@ -19,6 +19,7 @@ namespace OmanVehicleServiceBookingSystem
                 Id = "C" + IdCounter++;
                 Username = username;
                 Phonenumber = phonenumber;
+
             }
 
         }
