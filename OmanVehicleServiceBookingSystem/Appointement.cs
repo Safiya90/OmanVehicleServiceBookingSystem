@@ -11,13 +11,13 @@ namespace OmanVehicleServiceBookingSystem
         public int id { get; set; }
         public string  date { get; set; }
         public string time { get; set; }
-        public double cost { get; set; }
-        public Appointement(int id, string date, string time, double cost)
+        public double TotalCost { get; set; }
+        public Appointement(int id, string date, string time, double totalCost)
         {
             this.id = id;
             this.date = date;
             this.time = time;
-            this.cost = cost;
+            TotalCost = totalCost;
         }
 
 

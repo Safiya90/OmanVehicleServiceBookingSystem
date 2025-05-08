@@ -9,7 +9,7 @@ namespace OmanVehicleServiceBookingSystem
         {
             Greeting();
             Menu();
-            string option = Console.ReadLine());
+            string option = Console.ReadLine();
 
             switch(option)
             {
@@ -22,8 +22,6 @@ namespace OmanVehicleServiceBookingSystem
                     int phone = int.Parse(Console.ReadLine());
 
                     Customer customer = new Customer(name, phone);
-
-
                     // Call the method to register a new customer
                     break;
 
