@@ -12,6 +12,12 @@ namespace OmanVehicleServiceBookingSystem
             public string Platenumber{ get; set; }
             public string Model { get; set; }
             public string type { get; set; }
+
+        public Vehicle(string platenumber) 
+        {
+            Platenumber = platenumber;
+        }
+
         public Vehicle(int id, string platenumber, string model, string type)
         {
             this.id = id;

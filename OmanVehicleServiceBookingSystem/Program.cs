@@ -7,6 +7,7 @@ namespace OmanVehicleServiceBookingSystem
     {
         static void Main(string[] args)
         {
+            
             Greeting();
             Menu();
             string option = Console.ReadLine();
@@ -15,14 +16,55 @@ namespace OmanVehicleServiceBookingSystem
             {
 
                 case "1":
-                    Console.WriteLine("---Register New Customer===");
+                    Console.WriteLine("---Register New Customer---");
                     Console.Write("Enter Customer Name: ");
-                    String name = Console.ReadLine();
+                    string name = Console.ReadLine();
                     Console.Write("Enter Phone Number: ");
                     int phone = int.Parse(Console.ReadLine());
                     Customer customer = new Customer(name, phone);
                     // Call the method to register a new customer
                     Console.WriteLine($"Customer registered successfully with ID: {customer.Id}");
+                    break;
+                case "2":
+                    
+                case "3":
+                    Console.WriteLine("---Book Service Appointment---");
+                    Console.Write("Enter Plate Numper: ");
+                    string plateNumber = Console.ReadLine();
+                    Console.Write("Enter Preffered Date: ");
+                    DateTime date = Convert.ToDateTime(Console.ReadLine());
+                    Console.Write("Enter Preffered Time: ");
+                    DateTime time = Convert.ToDateTime(Console.ReadLine());
+                    Vehicle v = new Vehicle($"{plateNumber}");
+                    Appointement appoint = new Appointement(date, time);
+                    Console.WriteLine("Service appointment booked successfully.");
+                    break;
+                case "4":
+                    Console.WriteLine("---Record Complete Service---");
+                    break;
+                case "5":
+                    Console.WriteLine("---View Vehicle Service History---");
+                    break;
+                case "6":
+                    Console.WriteLine("---All Upcoming Service Booking---");
+                    //if (service == 0)
+                    //{
+                    //    Console.WriteLine("No students to display.");
+                    //}
+                    //else
+                    //{
+                    //    Console.WriteLine("Students and Grades");
+                    //    for (int i = 0; i < studentCount; i++)
+                    //    {
+                    //        Console.WriteLine($"{students[i]}: {grades[i]}");
+                    //    }
+                    //}
+                    break;
+                case "7":
+                    Console.WriteLine("Exiting program");
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice. Try again");
                     break;
 
             }
