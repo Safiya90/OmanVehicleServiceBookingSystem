@@ -9,26 +9,23 @@ namespace OmanVehicleServiceBookingSystem
     internal class Vehicle
     {
 
-           public Customer customer;
-            public string Platenumber{ get; set; }
-            public string Model { get; set; }
-            public string type { get; set; }
+        public string customerID;
+        public string Platenumber{ get; set; }
+        public string Model { get; set; }
+        public string Type { get; set; }
 
-        public Vehicle(Customer customer, string platenumber, string model, string type) { }
-
-
-        public Vehicle(string platenumber) 
+        public Vehicle()
         {
-            Platenumber = platenumber;
+
         }
 
-        public Vehicle(Customer customer,int id, string platenumber, string model, string type)
+        public Vehicle(string CustomerId,int id, string platenumber, string model, string type)
 
         {
-            this.customer = customer;
+            customerID = CustomerId;
             Platenumber = platenumber;
             Model = model;
-            this.type = type;
+            Type = type;
         }
     }
 }

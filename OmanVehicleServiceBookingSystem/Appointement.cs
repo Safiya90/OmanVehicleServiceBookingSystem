@@ -8,27 +8,20 @@ namespace OmanVehicleServiceBookingSystem
 {
     internal class Appointement
     {
-        public int id { get; set; }
+        public string PlateNumber { get; set; }
         public DateTime  Date { get; set; }
-        public DateTime Time { get; set; }
-        public double TotalCost { get; set; }
+        public TimeSpan Time { get; set; }
 
-        public Appointement(Vehicle Vehicle,DateTime date, DateTime time)
+        public Appointement()
         {
-            this.Vehicle = Vehicle;
+            
+        }
+        public Appointement(string plateNumber, DateTime date, TimeSpan time)
+        {
+            PlateNumber = plateNumber;
             Date = date;
             Time = time;
         }
-
-        //public Appointement(int id, string date, string time, double totalCost)
-        //{
-        //    this.id = id;
-        //    this.date = date;
-        //    this.time = time;
-        //    TotalCost = totalCost;
-        //}
-
-
 
     }
 }
