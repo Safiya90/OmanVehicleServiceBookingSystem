@@ -7,29 +7,61 @@ namespace OmanVehicleServiceBookingSystem
     {
         static void Main(string[] args)
         {
+            Customer[] customers = new Customer[10];
+            Vehicle[] vehicles = new Vehicle[10];
+            int indexvehicle = 0;
+            int index = 0;
             Greeting();
             Menu();
             string option = Console.ReadLine();
-
-            switch(option)
+            bool run = true;
+            while (run)
             {
+                switch (option)
+                {
 
-                case "1":
-                    Console.WriteLine("---Register New Customer===");
-                    Console.Write("Enter Customer Name: ");
-                    String name = Console.ReadLine();
-                    Console.Write("Enter Phone Number: ");
-                    int phone = int.Parse(Console.ReadLine());
-                    Customer customer = new Customer(name, phone);
-                    // Call the method to register a new customer
-                    Console.WriteLine($"Customer registered successfully with ID: {customer.Id}");
-                    break;
+                    case "1":
+                        Console.WriteLine("---Register New Customer===");
+                        Console.Write("Enter Customer Name: ");
+                        String name = Console.ReadLine();
+                        Console.Write("Enter Phone Number: ");
+                        int phone = int.Parse(Console.ReadLine());
+                        Customer customer = new Customer(name, phone);
+                        customers[index] = customer;
+                        // Call the method to register a new customer
+                        Console.WriteLine($"Customer registered successfully with ID: {customer.Id}");
+                        break;
 
+                    case "2":
+                        Console.WriteLine("---Add Vehicle===");
+                        Console.Write("Enter Customer ID: ");
+                        string Id = Console.ReadLine();
+                        for (int i = 0; i < index; i++)
+                        {
+                            if ((customers[i]).Id == Id)
+                            {
+                                Console.Write("Enter plate Number: ");
+                                string plat_number = Console.ReadLine();
+                                Console.Write("Enter Vehicle type: ");
+                                string type = (Console.ReadLine());
+                                Console.Write("Enter Model: ");
+                                string model = (Console.ReadLine());
+                                Vehicle vehicle = new Vehicle(customers[i], plat_number, model, type);
+                                vehicles[indexvehicle] = vehicle;
+                                Console.WriteLine(" Vehicle added sucessfully");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Customer not found");
+                            }
+                        }
+                        break;
+
+                }
             }
 
-
         }
-
         public static void Menu()
         {
             Console.WriteLine("1. Register New Customer");
