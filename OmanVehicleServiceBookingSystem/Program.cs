@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.Design;
+using System.Reflection;
 
 namespace OmanVehicleServiceBookingSystem
 {
@@ -8,15 +9,18 @@ namespace OmanVehicleServiceBookingSystem
         static void Main(string[] args)
         {
             Greeting();
-            Menu();
+            Customer[] customers = new Customer[10];
            int index = 0;
-           Customer[] customers = new Customer[10];
-            Vehicle[] vehicles = new Vehicle[10];
-            //int
-            string option = Console.ReadLine();
+           Vehicle[] vehicles = new Vehicle[10];
+           int indexVehicle = 0;
+            Appointement[] appointements= new Appointement[10];
+            int indexAppointement = 0;
             bool run = true;
             while (run)
             {
+                Menu();
+                string option = Console.ReadLine();
+
                 switch (option)
                 {
 
@@ -46,7 +50,7 @@ namespace OmanVehicleServiceBookingSystem
                                 Console.Write("Enter Model: ");
                                 string model = (Console.ReadLine());
                                 Vehicle vehicle = new Vehicle(customers[i], plat_number, model, type);
-                                vehicles[index] = vehicle;
+                                vehicles[indexVehicle] = vehicle;
                                 Console.WriteLine(" Vehicle added sucessfully");
                                 break;
                             }
@@ -57,6 +61,44 @@ namespace OmanVehicleServiceBookingSystem
                         }
                         break;
 
+                    case "3":
+                        Console.WriteLine("---Book Service Appointment---");
+                        Console.Write("Enter Plate Number: ");
+                        string plateNumber = Console.ReadLine();
+                        for (int i = 0; i < indexVehicle; i++)
+                        {
+                            if ((vehicles[i]).Platenumber == plateNumber)
+                            {
+                                Console.Write("Enter Preffered Date: ");
+                                DateTime date = Convert.ToDateTime(Console.ReadLine());
+                                Console.Write("Enter Preffered Time: ");
+                                DateTime time = Convert.ToDateTime(Console.ReadLine()); 
+                                Appointement appointement=new Appointement(vehicles[i], date, time);
+                                appointements[indexAppointement] = appointement;
+                                Console.WriteLine(" Service appointment booked successfully!");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Plate Number not found");
+                            }
+                        }
+                        break;
+                    case "4":
+                        Console.WriteLine("---Record Complete Service---");
+                        Console.Write("Enter Plate Numper: ");
+                        string plateNumber1 = Console.ReadLine();
+                        Console.Write("Enter Preffered Date: ");
+                        DateTime date1 = Convert.ToDateTime(Console.ReadLine());
+                        Console.Write("Enter Issues Found: ");
+                        string issues = Console.ReadLine();
+                        Console.Write("Enter Parts Replaced: ");
+                        string partReplaced = Console.ReadLine();
+                        Console.Write("Enter Service Coast: ");
+                        double cost = Convert.ToDouble(Console.ReadLine());
+                        ///create object
+                        Console.WriteLine("Service record saved.");
+                        break;
                 }
             }
 

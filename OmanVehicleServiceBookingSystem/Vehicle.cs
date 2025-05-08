@@ -22,7 +22,7 @@ namespace OmanVehicleServiceBookingSystem
             Platenumber = platenumber;
         }
 
-        public Vehicle(int id, string platenumber, string model, string type)
+        public Vehicle(Customer customer,int id, string platenumber, string model, string type)
 
         {
             this.customer = customer;
