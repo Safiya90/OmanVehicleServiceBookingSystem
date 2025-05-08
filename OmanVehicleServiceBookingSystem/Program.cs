@@ -41,9 +41,23 @@ namespace OmanVehicleServiceBookingSystem
                     break;
                 case "4":
                     Console.WriteLine("---Record Complete Service---");
+                    Console.Write("Enter Plate Numper: ");
+                    string plateNumber1 = Console.ReadLine();
+                    Console.Write("Enter Preffered Date: ");
+                    DateTime date1 = Convert.ToDateTime(Console.ReadLine());
+                    Console.Write("Enter Issues Found: ");
+                    string issues = Console.ReadLine();
+                    Console.Write("Enter Parts Replaced: ");
+                    string partReplaced = Console.ReadLine();
+                    Console.Write("Enter Service Coast: ");
+                    double cost = Convert.ToDouble(Console.ReadLine());
+                    ///create object
+                    Console.WriteLine("Service record saved.");
                     break;
                 case "5":
                     Console.WriteLine("---View Vehicle Service History---");
+                    Console.Write("Enter Plate Numper: ");
+                    string plateNumber2 = Console.ReadLine();
                     break;
                 case "6":
                     Console.WriteLine("---All Upcoming Service Booking---");
@@ -91,5 +105,7 @@ namespace OmanVehicleServiceBookingSystem
             Console.WriteLine("Al-Nahda Auto Garage - Servisce System");
             Console.WriteLine("=======================================================");
         }
+
+
     }
 }

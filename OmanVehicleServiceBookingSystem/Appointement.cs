@@ -8,6 +8,7 @@ namespace OmanVehicleServiceBookingSystem
 {
     internal class Appointement
     {
+
         public int id { get; set; }
         public DateTime  Date { get; set; }
         public DateTime Time { get; set; }

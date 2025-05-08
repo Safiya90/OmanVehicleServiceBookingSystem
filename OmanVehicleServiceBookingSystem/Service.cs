@@ -12,13 +12,15 @@ namespace OmanVehicleServiceBookingSystem
         public string Issue { get; set; }
         public string PartReplaced { get; set; }
         public double Cost { get; set; }
+        Vehicle vehicle;
 
-        public Service(int id, string issue, string partReplaced, double cost) 
+        public Service(int id, string issue, string partReplaced, double cost, Vehicle vehicle) 
         { 
             Id = id;
             Issue = issue;
             PartReplaced = partReplaced;
             Cost = cost;
+            this.vehicle = vehicle;
         }
     }
 }
