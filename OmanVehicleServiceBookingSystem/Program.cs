@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.Design;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.Design;
 
 namespace OmanVehicleServiceBookingSystem
 {
@@ -8,6 +9,26 @@ namespace OmanVehicleServiceBookingSystem
         {
             Greeting();
             Menu();
+            string option = Console.ReadLine());
+
+            switch(option)
+            {
+
+                case "1":
+                    Console.WriteLine("---Register New Customer===");
+                    Console.Write("Enter Customer Name: ");
+                    String name = Console.ReadLine();
+                    Console.Write("Enter Phone Number: ");
+                    int phone = int.Parse(Console.ReadLine());
+
+                    Customer customer = new Customer(name, phone);
+
+
+                    // Call the method to register a new customer
+                    break;
+
+            }
+
 
         }
 
@@ -22,6 +43,7 @@ namespace OmanVehicleServiceBookingSystem
             Console.WriteLine("7. Exit");
             Console.WriteLine("\nSelect an option (1-7): ");
         }
+        
 
         public static void Greeting()
         {
