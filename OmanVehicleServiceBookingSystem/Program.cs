@@ -165,11 +165,10 @@ namespace OmanVehicleServiceBookingSystem
  
                     break;
                 case "7":
-                    Console.WriteLine("Exiting program");
-                    break;
+                    Console.WriteLine("Thank you for using Al-Nahda Grage System. Goodbye!");
+                    return;
                 default:
                     Console.WriteLine("Invalid choice. Try again");
-                    run = false;
                     break;
                 }
             }

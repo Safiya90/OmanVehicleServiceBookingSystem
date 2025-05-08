@@ -8,8 +8,6 @@ namespace OmanVehicleServiceBookingSystem
 {
     internal class Booking
     {
-        {
-        }
 
         public string service { get; set; }
         public string appointement { get; set; }
