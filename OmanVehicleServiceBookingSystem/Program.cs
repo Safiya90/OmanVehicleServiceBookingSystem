@@ -20,9 +20,9 @@ namespace OmanVehicleServiceBookingSystem
                     String name = Console.ReadLine();
                     Console.Write("Enter Phone Number: ");
                     int phone = int.Parse(Console.ReadLine());
-
                     Customer customer = new Customer(name, phone);
                     // Call the method to register a new customer
+                    Console.WriteLine($"Customer registered successfully with ID: {customer.Id}");
                     break;
 
             }
